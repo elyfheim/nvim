@@ -1,6 +1,5 @@
 vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/folke/lazydev.nvim",
 	{
 		src = "https://github.com/saghen/blink.cmp",
 		version = vim.version.range("^1"),
@@ -45,8 +44,8 @@ vim.diagnostic.config({
 	},
 })
 
-vim.keymap.set("n", "<Leader>d", function() 
-	vim.diagnostic.open_float(0, {scope='line'})
+vim.keymap.set("n", "<Leader>d", function()
+	vim.diagnostic.open_float(0, { scope = "line" })
 end)
 
 require("blink.cmp").setup({
@@ -54,10 +53,7 @@ require("blink.cmp").setup({
 	appearance = { nerd_font_variant = "mono" },
 	completion = { documentation = { auto_show = false, auto_show_delay_ms = 500 } },
 	sources = {
-		default = { "lsp", "path", "lazydev" },
-		providers = {
-			lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
-		},
+		default = { "lsp", "path" },
 	},
 	fuzzy = { implementation = "rust" },
 })
