@@ -16,6 +16,7 @@ I use NixOS to manage packages on my main computer, but I still use good ol' con
 |qml language server|
 |ripgrep|
 |fzf|
+
 Make sure to install them with your favorite package manager on your system!
 
 ## Installation
