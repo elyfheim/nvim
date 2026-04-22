@@ -45,7 +45,9 @@ vim.diagnostic.config({
 	},
 })
 
-vim.keymap.set("n", "<Leader>d", ":lua vim.diagnostic.open_float(0, {scope='line'})<CR>")
+vim.keymap.set("n", "<Leader>d", function() 
+	vim.diagnostic.open_float(0, {scope='line'})
+end)
 
 require("blink.cmp").setup({
 	keymap = { preset = "super-tab" },

@@ -25,23 +25,6 @@ You need neovim [v0.12.1](https://github.com/neovim/neovim/releases/tag/v0.12.1)
 ## Plugins
 
 I try to not use too many plugins, I don't like having dependencies to be perfectly honest. But these are the ones I find crucial for my workflow.
-`"https://github.com/windwp/nvim-autopairs",`
-
-`"https://github.com/nvim-lualine/lualine.nvim",`
-
-`"https://github.com/folke/flash.nvim",`
-
-`"https://github.com/akinsho/bufferline.nvim",`
-
-`"https://github.com/nvim-lua/plenary.nvim",`
-
-`"https://github.com/nvim-telescope/telescope-ui-select.nvim",`
-
-`"https://github.com/nvim-telescope/telescope.nvim",`
-
-`"https://github.com/karb94/neoscroll.nvim",`
-
-`"https://github.com/nvim-tree/nvim-web-devicons",`
 |plugin name|description|
 |--|--|
 |[rose-pine](https://github.com/rose-pine/neovim)|color scheme|
