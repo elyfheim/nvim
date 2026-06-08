@@ -1,3 +1,2 @@
-vim.pack.add({ "https://github.com/rose-pine/neovim" })
-require("rose-pine").setup()
-vim.cmd("colorscheme rose-pine")
+vim.pack.add({ "https://github.com/AlexvZyl/nordic.nvim" })
+vim.cmd("colorscheme nordic")

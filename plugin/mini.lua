@@ -1,4 +1,6 @@
 vim.pack.add({ "https://github.com/nvim-mini/mini.files" })
+vim.pack.add({ "https://github.com/nvim-mini/mini.ai" })
+require("mini.ai").setup({ n_lines = 500 })
 local files = require("mini.files")
 files.setup({
 	mappings = {

@@ -15,7 +15,7 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
-vim.lsp.enable({ "nil_ls", "lua_ls", "ts_ls", "clangd", "qmlls" })
+vim.lsp.enable({ "nil_ls", "lua_ls", "ts_ls", "clangd", "qmlls", "zls", "astro" })
 
 vim.diagnostic.config({
 	severity_sort = true,
@@ -44,9 +44,18 @@ vim.diagnostic.config({
 	},
 })
 
-vim.keymap.set("n", "<Leader>d", function()
-	vim.diagnostic.open_float(0, { scope = "line" })
-end)
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
+	callback = function()
+		vim.keymap.set("n", "<Leader>d", function()
+			vim.diagnostic.open_float(0, { scope = "line" })
+		end)
+
+		vim.keymap.set({ "n", "x" }, "gra", vim.lsp.buf.code_action)
+		vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references)
+		vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions)
+	end,
+})
 
 require("blink.cmp").setup({
 	keymap = { preset = "super-tab" },
