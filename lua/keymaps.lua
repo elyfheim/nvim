@@ -22,3 +22,9 @@ vim.keymap.set("n", "<leader>bo", function()
 		end
 	end
 end)
+vim.keymap.set("n", "dd", function()
+	if vim.fn.getline("."):match("^%s*$") then
+		return '"_dd'
+	end
+	return "dd"
+end, { expr = true, desc = "Smart dd: delete empty lines to black hole" })

@@ -1,2 +1,2 @@
-vim.pack.add({ "https://github.com/AlexvZyl/nordic.nvim" })
-vim.cmd("colorscheme nordic")
+vim.pack.add({ "https://github.com/gbprod/nord.nvim" })
+vim.cmd("colorscheme nord")

@@ -11,7 +11,6 @@ vim.pack.add({
 })
 require("lualine").setup({
 	options = {
-		theme = "nordic",
 		component_separators = "",
 	},
 	sections = {
