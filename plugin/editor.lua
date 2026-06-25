@@ -43,7 +43,7 @@ require("bufferline").setup({
 		custom_filter = function(buf_number)
 			local buf_name = vim.fn.bufname(buf_number)
 
-			if buf_name:match("IN") or buf_name:match("OUT") then
+			if buf_name:match("IN") or buf_name:match("OUT") or buf_name:match("%d*:fish") then
 				return false
 			end
 			return true
