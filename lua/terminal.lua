@@ -35,3 +35,7 @@ end)
 vim.keymap.set("n", "<C-,>", function()
 	vim.cmd("resize +2")
 end)
+
+vim.keymap.set("n", "gd", function()
+	print("yahallo")
+end)

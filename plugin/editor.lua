@@ -24,7 +24,7 @@ require("lualine").setup({
 })
 require("nvim-autopairs").setup()
 local flash = require("flash")
-vim.keymap.set("n", "s", function()
+vim.keymap.set({ "n", "v" }, "s", function()
 	flash.jump()
 end)
 vim.keymap.set("n", "S", function()

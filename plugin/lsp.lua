@@ -53,7 +53,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		vim.keymap.set({ "n", "x" }, "gra", vim.lsp.buf.code_action)
 		vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references)
-		vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions)
+
+		vim.keymap.set("n", "gd", function()
+			if vim.api.nvim_buf_get_name(0):match("term://") ~= nil then
+				print("helloooo")
+			else
+				require("telescope.builtin").lsp_definitions()
+			end
+		end)
 	end,
 })
 
