@@ -15,7 +15,7 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
-vim.lsp.enable({ "nil_ls", "lua_ls", "ts_ls", "clangd", "qmlls", "zls" })
+vim.lsp.enable({ "nil_ls", "lua_ls", "ts_ls", "clangd", "rust_analyzer", "qmlls", "zls" })
 
 vim.diagnostic.config({
 	severity_sort = true,
