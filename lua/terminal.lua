@@ -7,25 +7,26 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	end,
 })
 
-local original_term_win = vim.api.nvim_get_current_win()
-local term_open = false
+local term_buf = nil
+local term_win = nil
 
 vim.keymap.set("n", "<space>t", function()
-	if term_open then
-		term_open = false
-		local wins = vim.api.nvim_list_wins()
-		for _, win in ipairs(wins) do
-			if win ~= original_term_win then
-				vim.api.nvim_win_close(win, false)
-			end
-		end
-	else
-		term_open = true
-		vim.cmd.vnew()
-		vim.cmd("term fish")
-		vim.cmd.wincmd("J")
-		vim.api.nvim_win_set_height(0, 20)
+	if term_win and vim.api.nvim_win_is_valid(term_win) then
+		vim.api.nvim_win_close(term_win, false)
+		term_win = nil
+		return
 	end
+
+	vim.cmd("botright 20split")
+
+	if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
+		vim.api.nvim_win_set_buf(0, term_buf)
+	else
+		vim.cmd("terminal fish")
+		term_buf = vim.api.nvim_get_current_buf()
+	end
+
+	term_win = vim.api.nvim_get_current_win()
 end)
 
 vim.keymap.set("n", "<C-m>", function()

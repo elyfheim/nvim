@@ -17,7 +17,7 @@ end)
 vim.keymap.set("n", "<leader>bo", function()
 	local current_buf = vim.api.nvim_get_current_buf()
 	for _, b in ipairs(vim.api.nvim_list_bufs()) do
-		if b ~= current_buf then
+		if b ~= current_buf and vim.bo[b].buftype ~= "terminal" then
 			pcall(vim.cmd, "bdelete " .. b)
 		end
 	end
