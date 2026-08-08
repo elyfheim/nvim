@@ -37,3 +37,8 @@ vim.o.confirm = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.opt.fillchars:append({ vert = " ", eob = " " })
+vim.filetype.add({
+	extension = {
+		smd = "smd",
+	},
+})
