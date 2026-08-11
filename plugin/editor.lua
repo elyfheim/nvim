@@ -76,11 +76,8 @@ require("telescope").setup({
 pcall(require("telescope").load_extension, "ui-select")
 
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader><Space>", builtin.find_files, { desc = "[S]earch [F]iles" })
-vim.keymap.set("n", "<leader>/", builtin.live_grep, { desc = "[S]earch [F]iles" })
-vim.keymap.set("n", "/", function()
-	builtin.live_grep({ search_dirs = { vim.fn.expand("%:p") } })
-end, { desc = "[/] Fuzzily search in current buffer" })
+vim.keymap.set("n", "<leader><leader>", builtin.find_files)
+vim.keymap.set("n", "<leader>/", builtin.live_grep)
 
 require("neoscroll").setup({
 	duration_multiplier = 0.5,

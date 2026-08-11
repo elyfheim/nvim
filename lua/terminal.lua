@@ -31,7 +31,7 @@ function toggle_terminal()
 	term_win = vim.api.nvim_get_current_win()
 end
 
-vim.keymap.set("n", "<space>t", function()
+vim.keymap.set("n", "<leader>t", function()
 	toggle_terminal()
 end)
 
