@@ -4,6 +4,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		html = { "prettierd" },
 		css = { "prettierd" },
+		vue = { "prettierd" },
 	},
 	format_on_save = {
 		timeout_ms = 500,
